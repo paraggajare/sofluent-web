@@ -1,420 +1,703 @@
 <title>Sofluent Technologies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap">
 
 <style>
 :root{
-  --paper:#F2F3F0;
-  --surface:#FBFBF9;
-  --surface-2:#EAECE7;
-  --ink:#12191A;
-  --ink-soft:#4B5754;
-  --ink-faint:#75817D;
-  --rule:#D4D8D1;
-  --accent:#0F6B5C;
-  --accent-ink:#0B5346;
-  --accent-wash:#E3EDE9;
-  --signal:#B9762A;
-  --focus:#0F6B5C;
+  /* enterprise teal system */
+  --ink:#002737;
+  --ink-2:#123c4d;
+  --brand:#005172;
+  --brand-bright:#3095b4;
+  --wash:#f1f8fa;
+  --wash-2:#e0eff4;
+  --wash-3:#b4d4df;
+  --amber:#e6a65d;
+  --edge:#d6d6d6;
+  --edge-soft:#e8ecee;
+  --body:#3f5259;
+  --muted:#6b7c83;
+  --white:#ffffff;
+  --shadow:0 1px 2px rgba(0,39,55,.06),0 10px 30px rgba(0,39,55,.08);
+  --shadow-lg:0 2px 4px rgba(0,39,55,.06),0 24px 60px rgba(0,39,55,.16);
+  --radius:6px;
 }
 
 *{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:90px;}
 body{
   margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:"Source Serif 4",Georgia,"Times New Roman",serif;
+  background:var(--white);
+  color:var(--body);
+  font-family:"Figtree","Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   font-size:17px;
-  line-height:1.6;
+  line-height:1.65;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,.display{
-  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
-  font-weight:600;
-  text-wrap:balance;
+h1,h2,h3,h4{
   margin:0;
-  letter-spacing:-0.015em;
+  color:var(--ink);
+  font-weight:700;
+  line-height:1.15;
+  letter-spacing:-0.02em;
+  text-wrap:balance;
 }
 p{margin:0;}
-a{color:inherit;}
-.mono{
-  font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-size:12px;
-  letter-spacing:0.1em;
-  text-transform:uppercase;
-}
-:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px;}
+a{color:var(--brand);}
+img,svg{max-width:100%;}
+:focus-visible{outline:3px solid var(--brand-bright);outline-offset:2px;border-radius:3px;}
 
-.wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px;}
+.eyebrow{
+  font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--brand-bright);margin:0 0 14px;
+}
+.section{padding:84px 0;}
+.section--wash{background:var(--wash);}
+.section-head{max-width:44rem;margin-bottom:44px;}
+.section-head h2{font-size:clamp(28px,3.6vw,42px);}
+.section-head p{margin-top:16px;font-size:19px;color:var(--body);}
+.skip{
+  position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;
+  padding:12px 18px;z-index:100;text-decoration:none;
+}
+.skip:focus{left:12px;top:12px;}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:16px;font-weight:600;text-decoration:none;
+  padding:14px 26px;border-radius:var(--radius);
+  border:2px solid transparent;transition:background .15s,color .15s,border-color .15s;
+  white-space:nowrap;
+}
+.btn--primary{background:var(--brand);color:#fff;border-color:var(--brand);}
+.btn--primary:hover{background:var(--ink);border-color:var(--ink);}
+.btn--outline{background:transparent;color:var(--brand);border-color:var(--brand);}
+.btn--outline:hover{background:var(--brand);color:#fff;}
+.btn--onDark{background:var(--white);color:var(--ink);border-color:var(--white);}
+.btn--onDark:hover{background:var(--wash-2);border-color:var(--wash-2);}
+.btn--ghostDark{background:transparent;color:#fff;border-color:rgba(255,255,255,.55);}
+.btn--ghostDark:hover{border-color:#fff;background:rgba(255,255,255,.1);}
+.btn--sm{padding:10px 18px;font-size:15px;}
+.link-more{
+  display:inline-flex;align-items:center;gap:7px;
+  font-weight:600;color:var(--brand);text-decoration:none;font-size:16px;
+}
+.link-more::after{content:"›";font-size:20px;line-height:1;transition:transform .15s;}
+.link-more:hover{color:var(--ink);}
+.link-more:hover::after{transform:translateX(3px);}
+
+/* ---------- utility bar ---------- */
+.utility{background:var(--ink);color:rgba(255,255,255,.82);font-size:13.5px;}
+.utility .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:40px;flex-wrap:wrap;}
+.utility a{color:rgba(255,255,255,.9);text-decoration:none;}
+.utility a:hover{color:#fff;text-decoration:underline;}
+.utility .u-right{display:flex;gap:22px;align-items:center;}
 
 /* ---------- masthead ---------- */
 .masthead{
-  position:sticky;top:0;z-index:20;
-  background:var(--paper);
-  background:color-mix(in srgb,var(--paper) 88%,transparent);
-  backdrop-filter:saturate(140%) blur(8px);
-  border-bottom:1px solid var(--rule);
+  position:sticky;top:0;z-index:40;background:var(--white);
+  border-bottom:1px solid var(--edge-soft);box-shadow:0 1px 0 rgba(0,39,55,.04);
 }
-.masthead .wrap{
-  display:flex;align-items:center;justify-content:space-between;
-  gap:20px;min-height:66px;flex-wrap:wrap;
+.masthead .wrap{display:flex;align-items:center;gap:28px;min-height:76px;}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto;}
+.brand .mark{
+  width:38px;height:38px;border-radius:5px;flex:none;
+  background:linear-gradient(140deg,var(--brand) 0%,var(--brand-bright) 100%);
+  display:grid;place-items:center;color:#fff;font-weight:800;font-size:20px;letter-spacing:-.04em;
 }
-.wordmark{
-  display:flex;align-items:baseline;gap:9px;
-  text-decoration:none;
+.brand .name{display:flex;flex-direction:column;line-height:1.1;}
+.brand .name b{color:var(--ink);font-size:21px;font-weight:800;letter-spacing:-.03em;}
+.brand .name span{color:var(--muted);font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;}
+.mainnav{display:flex;align-items:center;gap:30px;}
+.mainnav a{
+  color:var(--ink);text-decoration:none;font-size:16px;font-weight:600;
+  padding:26px 0;border-bottom:3px solid transparent;
 }
-.wordmark b{
-  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
-  font-weight:700;font-size:19px;letter-spacing:-0.02em;
-}
-.wordmark span{color:var(--ink-faint);}
-.nav{display:flex;align-items:center;gap:26px;flex-wrap:wrap;}
-.nav a{
-  color:var(--ink-soft);text-decoration:none;
-  font-family:"IBM Plex Mono",ui-monospace,monospace;
-  font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
-  padding:4px 0;border-bottom:1px solid transparent;
-}
-.nav a:hover{color:var(--ink);border-bottom-color:var(--accent);}
-.nav a.cta{
-  color:var(--paper);background:var(--accent-ink);
-  padding:9px 15px;border:0;border-radius:3px;
-}
-.nav a.cta:hover{background:var(--accent);color:var(--paper);}
-
-/* ---------- section scaffold ---------- */
-.band{border-bottom:1px solid var(--rule);}
-.band .wrap{
-  display:grid;
-  grid-template-columns:150px minmax(0,1fr);
-  gap:40px;
-  padding-top:72px;padding-bottom:72px;
-}
-.rail{
-  display:flex;flex-direction:column;gap:8px;
-  color:var(--ink-faint);
-  border-top:2px solid var(--accent);
-  padding-top:10px;
-  align-self:start;
-  position:sticky;top:96px;
-}
-.rail .code{color:var(--accent);}
-.col{display:flex;flex-direction:column;gap:34px;}
-.lede{font-size:21px;line-height:1.55;color:var(--ink-soft);max-width:62ch;}
-h2{font-size:clamp(28px,3.4vw,40px);line-height:1.08;}
-h3{font-size:19px;letter-spacing:-0.01em;}
+.mainnav a:hover{color:var(--brand);border-bottom-color:var(--brand-bright);}
+.nav-actions{display:flex;align-items:center;gap:14px;}
+.navtoggle{display:none;background:none;border:1px solid var(--edge);border-radius:var(--radius);padding:9px 12px;cursor:pointer;color:var(--ink);}
+.navtoggle svg{display:block;}
 
 /* ---------- hero ---------- */
-.hero .wrap{padding-top:96px;padding-bottom:84px;display:block;}
-.hero-eyebrow{color:var(--ink-faint);display:flex;gap:12px;align-items:center;margin-bottom:26px;}
-.hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--signal);}
-.hero h1{
-  font-size:clamp(38px,6.6vw,74px);
-  line-height:1.02;
-  font-weight:700;
-  letter-spacing:-0.03em;
-  max-width:17ch;
+.hero{position:relative;overflow:hidden;color:#fff;background:#002737;isolation:isolate;}
+.hero-media{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    radial-gradient(rgba(255,255,255,.11) 1px,transparent 1px),
+    linear-gradient(100deg,rgba(0,39,55,.97) 0%,rgba(0,39,55,.90) 38%,rgba(0,58,82,.74) 62%,rgba(0,81,114,.48) 100%),
+    url("img/hero-datacentre.jpg");
+  background-size:26px 26px,cover,cover;
+  background-position:0 0,center,center 40%;
+  background-repeat:repeat,no-repeat,no-repeat;
 }
-.hero h1 em{font-style:normal;color:var(--accent);}
-.hero p.lede{margin-top:26px;font-size:clamp(18px,2vw,22px);}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px;}
-.btn{
-  font-family:"IBM Plex Mono",ui-monospace,monospace;
-  font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;
-  text-decoration:none;padding:14px 22px;border-radius:3px;
-  border:1px solid var(--accent-ink);
-  transition:background .15s ease,color .15s ease;
+.hero .wrap{position:relative;z-index:1;padding-top:88px;padding-bottom:104px;
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center;}
+.hero h1{color:#fff;font-size:clamp(34px,5vw,58px);font-weight:800;line-height:1.06;letter-spacing:-.03em;}
+.hero h1 em{font-style:normal;color:#8fd0e2;}
+.hero .sub{margin-top:22px;font-size:clamp(17px,1.6vw,20px);color:rgba(255,255,255,.86);max-width:34rem;}
+.hero .eyebrow{color:#8fd0e2;display:flex;align-items:center;gap:10px;}
+.hero .eyebrow::before{content:"";width:22px;height:2px;background:var(--amber);display:inline-block;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;}
+
+/* hero action card (mirrors an enterprise "look up / apply" card) */
+.hero-card{
+  background:#fff;color:var(--body);border-radius:var(--radius);
+  box-shadow:var(--shadow-lg);padding:32px;border-top:5px solid var(--amber);
 }
-.btn-solid{background:var(--accent-ink);color:var(--paper);}
-.btn-solid:hover{background:var(--accent);}
-.btn-ghost{color:var(--ink);border-color:var(--rule);}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
-
-.facts{
-  border-top:1px solid var(--rule);
-  margin-top:60px;padding-top:22px;
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;
+.hero-card h2{font-size:23px;margin-bottom:10px;}
+.hero-card p{font-size:16px;}
+.hero-card ul{list-style:none;margin:20px 0;padding:0;display:flex;flex-direction:column;gap:11px;}
+.hero-card li{position:relative;padding-left:28px;font-size:15.5px;color:var(--body);line-height:1.5;}
+.hero-card li::before{
+  content:"";position:absolute;left:0;top:5px;width:17px;height:17px;border-radius:50%;
+  background:var(--wash-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23005172' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/11px no-repeat;
 }
-.fact{display:flex;flex-direction:column;gap:6px;}
-.fact .k{color:var(--ink-faint);}
-.fact .v{font-size:16px;line-height:1.45;}
+.hero-card .fine{font-size:13.5px;color:var(--muted);margin-top:14px;}
 
-/* ---------- services ---------- */
-.services{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);}
-.service{background:var(--surface);padding:28px;display:flex;flex-direction:column;gap:12px;}
-.service .tag{color:var(--accent);}
-.service p{color:var(--ink-soft);font-size:16px;}
-.service ul{margin:4px 0 0;padding-left:18px;color:var(--ink-faint);font-size:15px;line-height:1.7;}
+/* ---------- stat strip ---------- */
+.stats{background:var(--white);}
+.stats .wrap{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;
+  margin-top:-46px;position:relative;z-index:5;
+  background:#fff;border:1px solid var(--edge-soft);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:0;overflow:hidden;
+}
+.stat{padding:26px 28px;border-right:1px solid var(--edge-soft);}
+.stat:last-child{border-right:0;}
+.stat b{display:block;color:var(--brand);font-size:12.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;margin-bottom:8px;}
+.stat span{font-size:15.5px;line-height:1.5;color:var(--body);}
 
-/* ---------- process ---------- */
+/* ---------- icon cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;}
+.card{
+  background:#fff;border:1px solid var(--edge-soft);border-radius:var(--radius);
+  padding:30px 26px;display:flex;flex-direction:column;gap:14px;
+  transition:box-shadow .18s,transform .18s,border-color .18s;
+}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:var(--wash-3);}
+.card .ico{
+  width:52px;height:52px;border-radius:var(--radius);background:var(--wash-2);
+  display:grid;place-items:center;color:var(--brand);flex:none;
+}
+.card h3{font-size:20px;}
+.card p{font-size:16px;}
+.card ul{margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.6;display:flex;flex-direction:column;gap:6px;}
+.card .link-more{margin-top:auto;padding-top:6px;}
+
+/* ---------- split: process + side card ---------- */
+.split{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:56px;align-items:start;}
 .steps{display:flex;flex-direction:column;}
-.step{
-  display:grid;grid-template-columns:64px minmax(0,1fr) auto;
-  gap:22px;align-items:baseline;
-  padding:22px 0;border-top:1px solid var(--rule);
+.step{display:grid;grid-template-columns:52px minmax(0,1fr);gap:20px;padding:22px 0;border-bottom:1px solid var(--edge-soft);}
+.step:first-child{border-top:1px solid var(--edge-soft);}
+.step .n{
+  width:40px;height:40px;border-radius:50%;background:var(--white);border:2px solid var(--wash-3);
+  color:var(--brand);font-weight:800;font-size:15px;display:grid;place-items:center;
 }
-.step:last-child{border-bottom:1px solid var(--rule);}
-.step .n{color:var(--signal);font-variant-numeric:tabular-nums;}
-.step .body{display:flex;flex-direction:column;gap:6px;}
-.step .body p{color:var(--ink-soft);font-size:16px;}
-.step .dur{color:var(--ink-faint);white-space:nowrap;}
+.step h3{font-size:18.5px;margin-bottom:5px;}
+.step p{font-size:16px;}
+.step .dur{display:inline-block;margin-top:9px;font-size:13px;font-weight:600;color:var(--brand);
+  background:var(--wash-2);border-radius:100px;padding:3px 12px;}
+.aside-card{
+  background:var(--ink);color:rgba(255,255,255,.85);border-radius:var(--radius);
+  box-shadow:var(--shadow);position:sticky;top:100px;overflow:hidden;
+}
+.aside-card img{display:block;width:100%;height:190px;object-fit:cover;filter:saturate(.85) contrast(1.03);}
+.aside-body{padding:30px 32px 34px;}
+.aside-card h3{color:#fff;font-size:24px;margin-bottom:12px;}
+.aside-card p{font-size:16px;}
+.aside-card .rule{height:1px;background:rgba(255,255,255,.18);margin:22px 0;}
+.aside-card dl{margin:0;display:flex;flex-direction:column;gap:14px;}
+.aside-card dt{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8fd0e2;}
+.aside-card dd{margin:2px 0 0;font-size:15.5px;color:rgba(255,255,255,.85);}
+.aside-card .btn{margin-top:24px;}
 
-/* ---------- engagements ---------- */
-.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+/* ---------- engagement tiles ---------- */
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
 .plan{
-  background:var(--surface);border:1px solid var(--rule);border-radius:4px;
-  padding:26px;display:flex;flex-direction:column;gap:14px;
+  background:#fff;border:1px solid var(--edge-soft);border-radius:var(--radius);
+  padding:32px 28px;display:flex;flex-direction:column;gap:14px;position:relative;
 }
-.plan.pick{border-color:var(--accent);background:var(--accent-wash);}
-.plan .name{color:var(--accent);}
-.plan .who{color:var(--ink-soft);font-size:16px;}
-.plan .terms{color:var(--ink-faint);font-size:15px;border-top:1px solid var(--rule);padding-top:12px;margin-top:auto;}
+.plan--feature{border-color:var(--brand);box-shadow:var(--shadow);}
+.plan--feature::before{
+  content:"Most common";position:absolute;top:-13px;left:28px;
+  background:var(--brand);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;padding:5px 13px;border-radius:100px;
+}
+.plan .kicker{font-size:12.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--brand-bright);}
+.plan h3{font-size:21px;}
+.plan p{font-size:16px;}
+.plan .terms{margin-top:auto;padding-top:18px;border-top:1px solid var(--edge-soft);font-size:14.5px;font-weight:600;color:var(--ink);}
+
+/* ---------- principles ---------- */
+.commit-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:52px;align-items:center;}
+.commit-media{position:relative;}
+.commit-media img{display:block;width:100%;height:auto;border-radius:var(--radius);box-shadow:var(--shadow-lg);}
+.commit-media::after{
+  content:"";position:absolute;left:-14px;bottom:-14px;width:96px;height:96px;z-index:-1;
+  background-image:radial-gradient(var(--wash-3) 2px,transparent 2px);background-size:14px 14px;border-radius:4px;
+}
+.principles{display:flex;flex-direction:column;gap:18px;}
+.principle{background:#fff;border-radius:var(--radius);padding:30px 28px;border-left:4px solid var(--amber);box-shadow:var(--shadow);}
+.principle h3{font-size:19px;margin-bottom:10px;}
+.principle p{font-size:16px;}
 
 /* ---------- stack ---------- */
-.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.stack-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start;}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;}
 .chip{
-  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px;
-  border:1px solid var(--rule);border-radius:999px;padding:6px 13px;color:var(--ink-soft);
-  background:var(--surface);
+  background:#fff;border:1px solid var(--edge);border-radius:100px;
+  padding:7px 16px;font-size:14.5px;font-weight:500;color:var(--ink-2);
 }
-.two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px;}
-.note{color:var(--ink-soft);font-size:16px;}
-
-/* ---------- contact ---------- */
-.contact .wrap{padding-top:84px;padding-bottom:84px;}
-.contact-card{
-  border:1px solid var(--rule);border-radius:4px;background:var(--surface);
-  padding:34px;display:flex;flex-direction:column;gap:18px;
+.faq{border-top:1px solid var(--edge);}
+.faq details{border-bottom:1px solid var(--edge);padding:18px 0;}
+.faq summary{
+  cursor:pointer;list-style:none;font-weight:700;color:var(--ink);font-size:17px;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
 }
-.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;border-top:1px solid var(--rule);padding-top:22px;}
-.contact-grid a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-wash);}
-.contact-grid a:hover{border-bottom-color:var(--accent);}
-.contact-grid .k{color:var(--ink-faint);display:block;margin-bottom:6px;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";color:var(--brand);font-size:24px;font-weight:400;line-height:1;}
+.faq details[open] summary::after{content:"–";}
+.faq p{margin-top:12px;font-size:16px;}
 
-footer{padding:30px 0 46px;}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--ink-faint);}
+/* ---------- CTA band ---------- */
+.ctaband{background:#002737;color:#fff;text-align:center;padding:84px 0;position:relative;overflow:hidden;}
+.ctaband::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px),
+    linear-gradient(112deg,rgba(0,39,55,.94) 0%,rgba(0,49,70,.88) 55%,rgba(0,81,114,.78) 100%),
+    url("img/code-dark.jpg");
+  background-size:26px 26px,cover,cover;
+  background-position:0 0,center,center;
+  background-repeat:repeat,no-repeat,no-repeat;
+}
+.ctaband .wrap{position:relative;z-index:1;}
+.ctaband h2{color:#fff;font-size:clamp(28px,3.6vw,42px);max-width:24ch;margin:0 auto;}
+.ctaband p{margin:18px auto 0;max-width:46rem;color:rgba(255,255,255,.86);font-size:19px;}
+.ctaband .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px;}
 
-@media (max-width:900px){
-  .band .wrap{grid-template-columns:1fr;gap:22px;padding-top:56px;padding-bottom:56px;}
-  .rail{position:static;flex-direction:row;gap:14px;align-items:center;}
-  .facts{grid-template-columns:repeat(2,minmax(0,1fr));}
-  .services,.plans,.two-col,.contact-grid{grid-template-columns:1fr;}
-  .step{grid-template-columns:44px minmax(0,1fr);}
-  .step .dur{grid-column:2;}
+/* ---------- footer ---------- */
+.site-footer{background:var(--ink);color:rgba(255,255,255,.72);padding:60px 0 0;font-size:15.5px;}
+.foot-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:40px;padding-bottom:48px;}
+.site-footer h4{color:#fff;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;}
+.site-footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;}
+.site-footer a{color:rgba(255,255,255,.78);text-decoration:none;}
+.site-footer a:hover{color:#fff;text-decoration:underline;}
+.foot-about p{font-size:15.5px;color:rgba(255,255,255,.72);margin-top:14px;max-width:32ch;}
+.foot-about .brand .name b{color:#fff;}
+.foot-about .brand .name span{color:rgba(255,255,255,.55);}
+.legal{border-top:1px solid rgba(255,255,255,.14);padding:20px 0 34px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:rgba(255,255,255,.6);}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .hero .wrap{grid-template-columns:1fr;gap:40px;padding-top:64px;padding-bottom:88px;}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .split,.stack-grid{grid-template-columns:1fr;gap:40px;}
+  .aside-card{position:static;}
+  .stats .wrap{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .stat:nth-child(2){border-right:0;}
+  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--edge-soft);}
+  .plans{grid-template-columns:1fr;}
+  .commit-grid{grid-template-columns:1fr;gap:34px;}
+  .hero-media{
+    background-image:
+      radial-gradient(rgba(255,255,255,.11) 1px,transparent 1px),
+      linear-gradient(170deg,rgba(0,39,55,.95) 0%,rgba(0,49,70,.90) 55%,rgba(0,81,114,.80) 100%),
+      url("img/hero-datacentre-sm.jpg");
+  }
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:760px){
+  .mainnav{
+    display:none;position:absolute;top:100%;left:0;right:0;background:#fff;
+    flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 20px;
+    border-bottom:1px solid var(--edge-soft);box-shadow:var(--shadow);
+  }
+  .mainnav.open{display:flex;}
+  .mainnav a{padding:14px 0;border-bottom:1px solid var(--edge-soft);}
+  .masthead .wrap{position:relative;min-height:66px;}
+  .navtoggle{display:block;}
+  .nav-actions .btn{display:none;}
+  .section{padding:60px 0;}
+  .cards{grid-template-columns:1fr;}
+  .stats .wrap{grid-template-columns:1fr;margin-top:-32px;}
+  .stat{border-right:0;border-bottom:1px solid var(--edge-soft);}
+  .stat:last-child{border-bottom:0;}
+  .foot-grid{grid-template-columns:1fr;gap:32px;}
+  .utility .u-left{display:none;}
 }
 @media (prefers-reduced-motion:reduce){
-  *{transition:none!important;animation:none!important;}
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important;}
 }
 </style>
 
-<header class="masthead">
+<header>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="utility">
   <div class="wrap">
-    <a class="wordmark" href="#top">
-      <b>Sofluent</b><span class="mono">Technologies Inc</span>
+    <span class="u-left">Sofluent Technologies Inc. — software consulting, incorporated in Canada</span>
+    <span class="u-right">
+      <a href="mailto:info@sofluent.net">info@sofluent.net</a>
+      <a href="#contact">Contact</a>
+    </span>
+  </div>
+</div>
+
+<div class="masthead">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="mark" aria-hidden="true">S</span>
+      <span class="name"><b>Sofluent</b><span>Technologies Inc.</span></span>
     </a>
-    <nav class="nav">
+    <nav class="mainnav" id="mainnav" aria-label="Primary">
       <a href="#services">Services</a>
-      <a href="#process">Process</a>
+      <a href="#process">How we work</a>
       <a href="#engagements">Engagements</a>
       <a href="#stack">Stack</a>
-      <a class="cta" href="mailto:info@sofluent.net">Start a project</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <div class="nav-actions">
+      <a class="btn btn--primary btn--sm" href="mailto:info@sofluent.net?subject=Project%20enquiry">Start a project</a>
+      <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="mainnav" aria-label="Toggle navigation">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
   </div>
+</div>
 </header>
 
-<main id="top">
+<main id="main">
+<a id="top"></a>
 
-  <section class="band hero">
-    <div class="wrap">
-      <div class="hero-eyebrow mono"><span class="dot"></span> Software consulting · Canada</div>
+<section class="hero">
+  <div class="hero-media" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Software consulting · Canada</p>
       <h1>The people who scope your project are the people who <em>write the code</em>.</h1>
-      <p class="lede">Sofluent Technologies is a small software consultancy. We design, build, and ship mobile and web products for founders and teams who need working software, not a deck about one.</p>
+      <p class="sub">Sofluent Technologies designs, builds, and ships mobile and web products for founders and teams who need working software — not a deck about one.</p>
       <div class="hero-actions">
-        <a class="btn btn-solid" href="mailto:info@sofluent.net">Start a project</a>
-        <a class="btn btn-ghost" href="#process">See how we work</a>
-      </div>
-      <div class="facts">
-        <div class="fact"><span class="k mono">Model</span><span class="v">Senior engineers only. No handoff to a junior bench after the sales call.</span></div>
-        <div class="fact"><span class="k mono">Scope</span><span class="v">Fixed-fee discovery before any build estimate is quoted.</span></div>
-        <div class="fact"><span class="k mono">Cadence</span><span class="v">Working software in your hands every two weeks.</span></div>
-        <div class="fact"><span class="k mono">Handover</span><span class="v">You own the repository, the accounts, and the deployment keys.</span></div>
+        <a class="btn btn--onDark" href="mailto:info@sofluent.net?subject=Project%20enquiry">Start a project</a>
+        <a class="btn btn--ghostDark" href="#process">See how we work</a>
       </div>
     </div>
-  </section>
+    <div class="hero-card">
+      <h2>Book a scoping call</h2>
+      <p>Thirty minutes on what you are trying to ship and when. No obligation, no slide deck.</p>
+      <ul>
+        <li>A written summary of the problem as we understood it</li>
+        <li>An honest read on whether we are the right fit</li>
+        <li>A referral elsewhere if we are not</li>
+      </ul>
+      <a class="btn btn--primary" href="mailto:info@sofluent.net?subject=Scoping%20call">Email info@sofluent.net</a>
+      <p class="fine">We reply to every enquiry within two business days.</p>
+    </div>
+  </div>
+</section>
 
-  <section class="band" id="services">
-    <div class="wrap">
-      <div class="rail mono"><span class="code">§ 01</span><span>Services</span></div>
-      <div class="col">
-        <h2>What we build</h2>
-        <p class="lede">Four kinds of work. If your problem doesn't fit one of them, say so in the first email — we would rather refer you out than stretch.</p>
-        <div class="services">
-          <article class="service">
-            <span class="tag mono">Mobile</span>
-            <h3>iOS and Android from one codebase</h3>
-            <p>Cross-platform apps in Flutter, taken from empty repo through both store review queues.</p>
-            <ul>
-              <li>Store submission, review responses, and release pipelines</li>
-              <li>In-app purchases, subscriptions, and paywalls</li>
-              <li>Offline-first data, local notifications, deep links</li>
-            </ul>
-          </article>
-          <article class="service">
-            <span class="tag mono">Web</span>
-            <h3>Web applications and marketing sites</h3>
-            <p>Interfaces that stay fast on a mid-range phone and still make sense at 4am when something breaks.</p>
-            <ul>
-              <li>Product dashboards, portals, and internal tools</li>
-              <li>Static and server-rendered sites with real page-speed budgets</li>
-              <li>Payments, auth, and third-party integrations</li>
-            </ul>
-          </article>
-          <article class="service">
-            <span class="tag mono">AI</span>
-            <h3>AI features that survive contact with users</h3>
-            <p>Language-model features built with evaluation and cost tracking from the first commit, not bolted on after the demo.</p>
-            <ul>
-              <li>Retrieval over your own documents and data</li>
-              <li>Prompt and output evaluation harnesses</li>
-              <li>Token cost, latency, and failure-mode budgets</li>
-            </ul>
-          </article>
-          <article class="service">
-            <span class="tag mono">Rescue</span>
-            <h3>Inherited codebases and stalled builds</h3>
-            <p>An honest read on what you have, what it will cost to keep, and what should be rewritten — before anyone commits to a rebuild.</p>
-            <ul>
-              <li>Codebase and architecture assessment</li>
-              <li>Release unblocking and store-rejection fixes</li>
-              <li>Test coverage and CI on projects that shipped without either</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="stats">
+  <div class="wrap">
+    <div class="stat"><b>Model</b><span>Senior engineers only. No handoff to a junior bench after the sales call.</span></div>
+    <div class="stat"><b>Scope</b><span>Fixed-fee discovery before any build estimate is quoted.</span></div>
+    <div class="stat"><b>Cadence</b><span>Working software in your hands every two weeks.</span></div>
+    <div class="stat"><b>Handover</b><span>You own the repository, the accounts, and the deployment keys.</span></div>
+  </div>
+</section>
 
-  <section class="band" id="process">
-    <div class="wrap">
-      <div class="rail mono"><span class="code">§ 02</span><span>Process</span></div>
-      <div class="col">
-        <h2>How an engagement runs</h2>
-        <p class="lede">Every project moves through the same five stages, in order. You can stop after any one of them.</p>
-        <div class="steps">
-          <div class="step">
-            <span class="n mono">01</span>
-            <div class="body"><h3>Scoping call</h3><p>Thirty minutes on what you are trying to ship and when. You leave with a written summary of the problem as we understood it, whether or not you hire us.</p></div>
-            <span class="dur mono">30 min · free</span>
-          </div>
-          <div class="step">
-            <span class="n mono">02</span>
-            <div class="body"><h3>Discovery sprint</h3><p>We map the build: user flows, data model, integrations, risks, and the parts we do not yet know enough about. Ends in a written scope and a fixed price for the build.</p></div>
-            <span class="dur mono">1–2 weeks · fixed fee</span>
-          </div>
-          <div class="step">
-            <span class="n mono">03</span>
-            <div class="body"><h3>Build</h3><p>Two-week increments against the agreed scope. You get a running build and a written change log at the end of each one, plus direct access to the engineers writing it.</p></div>
-            <span class="dur mono">Milestone billing</span>
-          </div>
-          <div class="step">
-            <span class="n mono">04</span>
-            <div class="body"><h3>Launch and handover</h3><p>Store submission or production deploy, then the repository, infrastructure, accounts, and documentation transfer to you. Nothing stays behind a login only we hold.</p></div>
-            <span class="dur mono">Included</span>
-          </div>
-          <div class="step">
-            <span class="n mono">05</span>
-            <div class="body"><h3>Support, if you want it</h3><p>A monthly retainer for maintenance, store policy changes, and the next set of features. Optional, cancellable, and never a condition of handover.</p></div>
-            <span class="dur mono">Monthly · optional</span>
-          </div>
-        </div>
-      </div>
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Services</p>
+      <h2>Find the engineering that fits your business need</h2>
+      <p>Four kinds of work. If your problem doesn't fit one of them, say so in the first email — we would rather refer you out than stretch.</p>
     </div>
-  </section>
+    <div class="cards">
+      <article class="card">
+        <span class="ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></span>
+        <h3>Mobile</h3>
+        <p>iOS and Android from one Flutter codebase, taken from empty repo through both store review queues.</p>
+        <ul>
+          <li>Store submission, review responses, release pipelines</li>
+          <li>In-app purchases, subscriptions, paywalls</li>
+          <li>Offline-first data, notifications, deep links</li>
+        </ul>
+        <a class="link-more" href="#contact">Discuss a mobile build</a>
+      </article>
+      <article class="card">
+        <span class="ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="15" rx="2.5"/><path d="M2.5 9h19M6 6.5h.01M8.5 6.5h.01"/></svg></span>
+        <h3>Web</h3>
+        <p>Applications and marketing sites that stay fast on a mid-range phone and still make sense at 4am when something breaks.</p>
+        <ul>
+          <li>Product dashboards, portals, internal tools</li>
+          <li>Static and server-rendered sites with page-speed budgets</li>
+          <li>Payments, auth, third-party integrations</li>
+        </ul>
+        <a class="link-more" href="#contact">Discuss a web build</a>
+      </article>
+      <article class="card">
+        <span class="ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg></span>
+        <h3>AI features</h3>
+        <p>Language-model features built with evaluation and cost tracking from the first commit, not bolted on after the demo.</p>
+        <ul>
+          <li>Retrieval over your own documents and data</li>
+          <li>Prompt and output evaluation harnesses</li>
+          <li>Token cost, latency, and failure-mode budgets</li>
+        </ul>
+        <a class="link-more" href="#contact">Discuss an AI feature</a>
+      </article>
+      <article class="card">
+        <span class="ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5a5 5 0 00-6.4 6.4L3.5 14.5a2 2 0 102.8 2.8l4.6-4.6a5 5 0 006.4-6.4l-2.8 2.8-2.4-.6-.6-2.4z"/></svg></span>
+        <h3>Rescue</h3>
+        <p>An honest read on an inherited codebase — what you have, what it costs to keep, what should be rewritten — before anyone commits to a rebuild.</p>
+        <ul>
+          <li>Codebase and architecture assessment</li>
+          <li>Release unblocking and store-rejection fixes</li>
+          <li>Tests and CI on projects that shipped without either</li>
+        </ul>
+        <a class="link-more" href="#contact">Discuss a rescue</a>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <section class="band" id="engagements">
-    <div class="wrap">
-      <div class="rail mono"><span class="code">§ 03</span><span>Engagements</span></div>
-      <div class="col">
-        <h2>Three ways to work with us</h2>
-        <div class="plans">
-          <div class="plan">
-            <span class="name mono">Discovery sprint</span>
-            <h3>Find out what it really takes</h3>
-            <p class="who">For teams with an idea, a deadline, and no reliable estimate. Ends with a scope document and a fixed build price you can take to anyone.</p>
-            <p class="terms mono">1–2 weeks · fixed fee</p>
+<section class="section section--wash" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How we work</p>
+      <h2>Five stages, in order — and you can stop after any one of them</h2>
+      <p>Every engagement runs the same way, so you always know what the next commitment is before you make it.</p>
+    </div>
+    <div class="split">
+      <div class="steps">
+        <div class="step">
+          <span class="n">01</span>
+          <div>
+            <h3>Scoping call</h3>
+            <p>Thirty minutes on what you are trying to ship and when. You leave with a written summary of the problem as we understood it, whether or not you hire us.</p>
+            <span class="dur">30 minutes · free</span>
           </div>
-          <div class="plan pick">
-            <span class="name mono">Project build</span>
-            <h3>Ship the thing</h3>
-            <p class="who">A defined product built to an agreed scope, billed against milestones, delivered to your accounts and your repository.</p>
-            <p class="terms mono">Milestone billing</p>
+        </div>
+        <div class="step">
+          <span class="n">02</span>
+          <div>
+            <h3>Discovery sprint</h3>
+            <p>We map the build: user flows, data model, integrations, risks, and the parts we do not yet know enough about. Ends in a written scope and a fixed price for the build.</p>
+            <span class="dur">1–2 weeks · fixed fee</span>
           </div>
-          <div class="plan">
-            <span class="name mono">Retainer</span>
-            <h3>Keep it healthy</h3>
-            <p class="who">A recurring block of engineering time for maintenance, platform changes, and the steady stream of small features after launch.</p>
-            <p class="terms mono">Monthly · cancel anytime</p>
+        </div>
+        <div class="step">
+          <span class="n">03</span>
+          <div>
+            <h3>Build</h3>
+            <p>Two-week increments against the agreed scope. You get a running build and a written change log at the end of each one, plus direct access to the engineers writing it.</p>
+            <span class="dur">Milestone billing</span>
+          </div>
+        </div>
+        <div class="step">
+          <span class="n">04</span>
+          <div>
+            <h3>Launch and handover</h3>
+            <p>Store submission or production deploy, then the repository, infrastructure, accounts, and documentation transfer to you. Nothing stays behind a login only we hold.</p>
+            <span class="dur">Included</span>
+          </div>
+        </div>
+        <div class="step">
+          <span class="n">05</span>
+          <div>
+            <h3>Support, if you want it</h3>
+            <p>A monthly retainer for maintenance, store policy changes, and the next set of features. Optional, cancellable, and never a condition of handover.</p>
+            <span class="dur">Monthly · optional</span>
           </div>
         </div>
       </div>
+      <aside class="aside-card">
+        <img src="img/discovery-sketch.jpg" alt="Two people sketching a plan on paper next to open laptops" width="1000" height="667" loading="lazy" decoding="async">
+        <div class="aside-body">
+        <h3>What a first email should contain</h3>
+        <p>Enough for us to tell you honestly whether this is a fit — usually three short paragraphs.</p>
+        <div class="rule"></div>
+        <dl>
+          <dt>The product</dt>
+          <dd>What it does and who uses it.</dd>
+          <dt>The deadline</dt>
+          <dd>The date that actually matters, and why.</dd>
+          <dt>The budget range</dt>
+          <dd>A range is fine. It tells us which of the three engagements to propose.</dd>
+        </dl>
+        <a class="btn btn--onDark" href="mailto:info@sofluent.net?subject=Project%20enquiry">Email info@sofluent.net</a>
+        </div>
+      </aside>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="band" id="stack">
-    <div class="wrap">
-      <div class="rail mono"><span class="code">§ 04</span><span>Stack</span></div>
-      <div class="col">
-        <h2>What we work in</h2>
-        <div class="two-col">
-          <div class="col" style="gap:18px;">
-            <p class="note">We are deliberately narrow. These are the tools we have shipped production software in, and we will tell you when your project would be better served by something outside this list.</p>
-            <div class="chips">
-              <span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Swift</span>
-              <span class="chip">Kotlin</span><span class="chip">TypeScript</span><span class="chip">React</span>
-              <span class="chip">Node.js</span><span class="chip">Python</span><span class="chip">PostgreSQL</span>
-              <span class="chip">Firebase</span><span class="chip">Supabase</span><span class="chip">Claude API</span>
-              <span class="chip">App Store Connect</span><span class="chip">Google Play</span><span class="chip">GitHub Actions</span>
-            </div>
-          </div>
-          <div class="col" style="gap:18px;">
-            <h3>How we hold ourselves to it</h3>
-            <p class="note"><strong>Claims get checked.</strong> Anything we put in front of your users — a number, a date, a legal reference — is computed from real data or cited to a real source. If neither is possible, it does not ship.</p>
-            <p class="note"><strong>You keep the keys.</strong> Repositories, cloud accounts, developer accounts, and domains are yours from day one, registered in your name.</p>
-            <p class="note"><strong>No lock-in by omission.</strong> Documentation and deployment steps are part of the deliverable, not a follow-up quote.</p>
-          </div>
-        </div>
-      </div>
+<section class="section" id="engagements">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Engagements</p>
+      <h2>Three ways to work with us</h2>
+      <p>Each one is a complete deliverable on its own. None of them requires the next.</p>
     </div>
-  </section>
+    <div class="plans">
+      <article class="plan">
+        <span class="kicker">Discovery sprint</span>
+        <h3>Find out what it really takes</h3>
+        <p>For teams with an idea, a deadline, and no reliable estimate. Ends with a scope document and a fixed build price you can take to anyone.</p>
+        <p class="terms">1–2 weeks · fixed fee</p>
+      </article>
+      <article class="plan plan--feature">
+        <span class="kicker">Project build</span>
+        <h3>Ship the thing</h3>
+        <p>A defined product built to an agreed scope, billed against milestones, delivered into your accounts and your repository.</p>
+        <p class="terms">Milestone billing</p>
+      </article>
+      <article class="plan">
+        <span class="kicker">Retainer</span>
+        <h3>Keep it healthy</h3>
+        <p>A recurring block of engineering time for maintenance, platform changes, and the steady stream of small features after launch.</p>
+        <p class="terms">Monthly · cancel anytime</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <section class="band contact" id="contact">
-    <div class="wrap" style="display:block;">
-      <div class="contact-card">
-        <span class="mono" style="color:var(--ink-faint);">§ 05 — Contact</span>
-        <h2>Tell us what you are trying to ship.</h2>
-        <p class="lede">A short description of the product, your deadline, and your budget range is enough to start. We reply to every enquiry within two business days, including the ones we are not the right fit for.</p>
-        <div>
-          <a class="btn btn-solid" href="mailto:info@sofluent.net?subject=Project%20enquiry">Email info@sofluent.net</a>
-        </div>
-        <div class="contact-grid">
-          <div><span class="k mono">Email</span><a href="mailto:info@sofluent.net">info@sofluent.net</a></div>
-          <div><span class="k mono">Web</span><a href="https://sofluent.net/">sofluent.net</a></div>
-          <div><span class="k mono">Location</span><span>Canada · working remotely with clients worldwide</span></div>
-        </div>
+<section class="section section--wash" id="principles">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How we hold ourselves to it</p>
+      <h2>Three commitments we will put in the contract</h2>
+    </div>
+    <div class="commit-grid">
+      <div class="commit-media">
+        <img src="img/team-desks.jpg" alt="Two engineers working at adjacent desks, dashboards open on their screens" width="1200" height="800" loading="lazy" decoding="async">
+      </div>
+      <div class="principles">
+      <div class="principle">
+        <h3>Claims get checked</h3>
+        <p>Anything we put in front of your users — a number, a date, a legal reference — is computed from real data or cited to a real source. If neither is possible, it does not ship.</p>
+      </div>
+      <div class="principle">
+        <h3>You keep the keys</h3>
+        <p>Repositories, cloud accounts, developer accounts, and domains are yours from day one, registered in your name — not ours.</p>
+      </div>
+      <div class="principle">
+        <h3>No lock-in by omission</h3>
+        <p>Documentation and deployment steps are part of the deliverable, not a follow-up quote. You can hand the project to another team without calling us.</p>
+      </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="section" id="stack">
+  <div class="wrap">
+    <div class="stack-grid">
+      <div>
+        <p class="eyebrow">Stack</p>
+        <h2 style="font-size:clamp(28px,3.6vw,42px);">What we work in</h2>
+        <p style="margin-top:16px;font-size:19px;">We are deliberately narrow. These are the tools we have shipped production software in — and we will tell you when your project would be better served by something outside this list.</p>
+        <div class="chips">
+          <span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Swift</span>
+          <span class="chip">Kotlin</span><span class="chip">TypeScript</span><span class="chip">React</span>
+          <span class="chip">Node.js</span><span class="chip">Python</span><span class="chip">PostgreSQL</span>
+          <span class="chip">Firebase</span><span class="chip">Supabase</span><span class="chip">Claude API</span>
+          <span class="chip">App Store Connect</span><span class="chip">Google Play</span><span class="chip">GitHub Actions</span>
+        </div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Do you work with clients outside Canada?</summary>
+          <p>Yes. We are incorporated in Canada and work remotely with clients worldwide. Contracts and invoicing are handled by Sofluent Technologies Inc.</p>
+        </details>
+        <details>
+          <summary>Can you take over a project someone else started?</summary>
+          <p>That is what the rescue engagement is for. We start with an assessment of the existing codebase and give you a written read on what to keep, what to replace, and what it will cost — before any rebuild is proposed.</p>
+        </details>
+        <details>
+          <summary>Who owns the code?</summary>
+          <p>You do, from the first commit. The repository, cloud accounts, and store developer accounts are registered in your name and stay with you at handover.</p>
+        </details>
+        <details>
+          <summary>How do you price a build?</summary>
+          <p>The discovery sprint is a fixed fee. It ends in a written scope and a fixed price for the build, billed against milestones. We do not quote a build price before discovery, because that number would be a guess.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ctaband" id="contact">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#8fd0e2;">Contact</p>
+    <h2>Tell us what you are trying to ship</h2>
+    <p>A short description of the product, your deadline, and your budget range is enough to start. We reply to every enquiry within two business days — including the ones we are not the right fit for.</p>
+    <div class="row">
+      <a class="btn btn--onDark" href="mailto:info@sofluent.net?subject=Project%20enquiry">Email info@sofluent.net</a>
+      <a class="btn btn--ghostDark" href="#services">Review the services</a>
+    </div>
+  </div>
+</section>
 
 </main>
 
-<footer>
-  <div class="wrap mono">
-    <span>© <span id="yr">2026</span> Sofluent Technologies Inc.</span>
-    <span><a href="https://sofluent.net/" style="color:var(--ink-faint);text-decoration:none;border-bottom:1px solid var(--rule);">sofluent.net</a> · Incorporated in Canada</span>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a class="brand" href="#top">
+          <span class="mark" aria-hidden="true">S</span>
+          <span class="name"><b>Sofluent</b><span>Technologies Inc.</span></span>
+        </a>
+        <p>A small software consultancy building mobile, web, and AI products for founders and teams.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Mobile</a></li>
+          <li><a href="#services">Web</a></li>
+          <li><a href="#services">AI features</a></li>
+          <li><a href="#services">Rescue</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#process">How we work</a></li>
+          <li><a href="#engagements">Engagements</a></li>
+          <li><a href="#principles">Commitments</a></li>
+          <li><a href="#stack">Stack</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@sofluent.net">info@sofluent.net</a></li>
+          <li><a href="https://sofluent.net/">sofluent.net</a></li>
+          <li>Canada · working remotely with clients worldwide</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr">2026</span> Sofluent Technologies Inc. All rights reserved.</span>
+      <span>Incorporated in Canada</span>
+    </div>
   </div>
 </footer>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+  (function(){
+    var t = document.getElementById('navtoggle'), n = document.getElementById('mainnav');
+    t.addEventListener('click', function(){
+      var open = n.classList.toggle('open');
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    n.addEventListener('click', function(e){
+      if (e.target.tagName === 'A') { n.classList.remove('open'); t.setAttribute('aria-expanded','false'); }
+    });
+  })();
 </script>

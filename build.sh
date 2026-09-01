@@ -39,7 +39,14 @@ doc = f"""<!doctype html>
 <meta property="og:url" content="https://sofluent.net/">
 <meta property="og:title" content="Sofluent Technologies">
 <meta property="og:description" content="A small software consultancy building mobile, web, and AI products for founders and teams.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://sofluent.net/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sofluent Technologies - the people who scope your project write the code.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sofluent.net/img/og.jpg">
+<meta name="theme-color" content="#002737">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 {head.strip()}
 </head>
 <body>

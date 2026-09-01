@@ -41,3 +41,23 @@ To publish a change:
     git push
 
 Pages redeploys in ~1 minute.
+
+## Images
+
+Photography lives in `img/` and is committed to the repo (no hotlinking, no runtime
+dependency on a third-party CDN). All four photographs are from Unsplash and are used
+under the [Unsplash License](https://unsplash.com/license), which permits commercial use
+without attribution.
+
+| File | Used for | Source |
+|---|---|---|
+| `hero-datacentre.jpg` (+ `-sm` for ≤1000px) | Hero background under the teal gradient | `images.unsplash.com/photo-1573164713988-8665fc963095` |
+| `discovery-sketch.jpg` | Photo cap on the "first email" card in How we work | `images.unsplash.com/photo-1454165804606-c3d57bc86b40` |
+| `team-desks.jpg` | Commitments section, paired with the three cards | `images.unsplash.com/photo-1551434678-e076c223a692` |
+| `code-dark.jpg` | Texture under the contact CTA band | `images.unsplash.com/photo-1555066931-4365d14bab8c` |
+| `og.jpg` | Social share card (1200x630), rendered from a local HTML template | generated |
+
+`favicon.svg` is the wordmark tile, drawn inline — no raster favicon needed.
+
+To re-generate the OG card, render a 1200x630 HTML template with headless Chrome and
+convert to JPEG; the template is not committed since it is a one-off.
