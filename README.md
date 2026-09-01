@@ -12,8 +12,8 @@ Static pages. No build tooling, no dependencies (fonts load from Google Fonts).
 | Source | URL |
 | --- | --- |
 | `src/page.html` | https://sofluent.net/ |
-| `src/citizenship-privacy.html` | https://sofluent.net/citizenship/privacy |
-| `src/citizenship-support.html` | https://sofluent.net/citizenship/support |
+| `src/citizenship-privacy.html` | https://sofluent.net/citizenship/privacy/ |
+| `src/citizenship-support.html` | https://sofluent.net/citizenship/support/ |
 
 The two `citizenship-*` pages are the privacy policy and support page required by
 the App Store and Google Play for the Canadian Citizenship Test Prep app. Both
