@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Privacy policy for the Canadian Citizenship Test Prep mobile app by Sofluent Technologies Inc.">
+<link rel="canonical" href="https://sofluent.net/citizenship/privacy">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sofluent.net/citizenship/privacy">
+<meta property="og:title" content="Privacy Policy — Canadian Citizenship Test Prep">
+<meta property="og:description" content="Privacy policy for the Canadian Citizenship Test Prep mobile app by Sofluent Technologies Inc.">
+<meta name="twitter:card" content="summary">
+<style>
+/* Shared styles for the standalone document pages (privacy, support).
+   Tokens and fonts mirror src/page.html so these read as part of the site. */
+:root{
+  --paper:#F2F3F0;
+  --surface:#FBFBF9;
+  --surface-2:#EAECE7;
+  --ink:#12191A;
+  --ink-soft:#4B5754;
+  --ink-faint:#75817D;
+  --rule:#D4D8D1;
+  --accent:#0F6B5C;
+  --accent-ink:#0B5346;
+  --accent-wash:#E3EDE9;
+  --signal:#B9762A;
+  --focus:#0F6B5C;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Source Serif 4",Georgia,"Times New Roman",serif;
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-weight:600;
+  text-wrap:balance;
+  margin:0;
+  letter-spacing:-0.015em;
+}
+p{margin:0;}
+a{color:var(--accent-ink);}
+a:hover{color:var(--accent);}
+.mono{
+  font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px;}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+
+/* ---------- masthead ---------- */
+.masthead{
+  position:sticky;top:0;z-index:20;
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule);
+}
+.masthead .wrap{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;min-height:66px;flex-wrap:wrap;
+}
+.wordmark{display:flex;align-items:baseline;gap:9px;text-decoration:none;color:var(--ink);}
+.wordmark b{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-weight:700;font-size:19px;letter-spacing:-0.02em;
+}
+.wordmark span{color:var(--ink-faint);}
+.nav{display:flex;align-items:center;gap:26px;flex-wrap:wrap;}
+.nav a{
+  color:var(--ink-soft);text-decoration:none;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
+  padding:4px 0;border-bottom:1px solid transparent;
+}
+.nav a:hover{color:var(--ink);border-bottom-color:var(--accent);}
+
+/* ---------- document head ---------- */
+.dochead{border-bottom:1px solid var(--rule);}
+.dochead .wrap{padding-top:64px;padding-bottom:40px;}
+.eyebrow{display:flex;gap:12px;align-items:center;color:var(--ink-faint);margin-bottom:22px;}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--signal);flex:none;}
+.dochead h1{font-size:clamp(32px,5vw,52px);line-height:1.05;font-weight:700;letter-spacing:-0.025em;max-width:20ch;}
+.dates{margin-top:20px;color:var(--ink-faint);}
+.lede{font-size:19px;line-height:1.6;color:var(--ink-soft);max-width:64ch;margin-top:22px;}
+
+/* ---------- document body ---------- */
+.doc .wrap{
+  display:grid;
+  grid-template-columns:190px minmax(0,1fr);
+  gap:48px;
+  padding-top:56px;padding-bottom:80px;
+  align-items:start;
+}
+.toc{
+  position:sticky;top:96px;align-self:start;
+  border-top:2px solid var(--accent);padding-top:12px;
+  display:flex;flex-direction:column;gap:9px;
+}
+.toc .k{color:var(--accent);}
+.toc a{color:var(--ink-soft);text-decoration:none;font-size:14px;line-height:1.35;}
+.toc a:hover{color:var(--accent-ink);}
+.body{display:flex;flex-direction:column;gap:38px;max-width:70ch;}
+section{scroll-margin-top:90px;display:flex;flex-direction:column;gap:14px;}
+section h2{font-size:23px;letter-spacing:-0.01em;display:flex;gap:12px;align-items:baseline;}
+section h2 .num{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:12px;letter-spacing:0.1em;color:var(--accent);flex:none;
+}
+section h3{font-size:17px;margin-top:6px;}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:9px;}
+li::marker{color:var(--ink-faint);}
+.note{color:var(--ink-soft);}
+
+/* ---------- callouts ---------- */
+.summary{
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-left:3px solid var(--accent);
+  border-radius:3px;
+  padding:24px 26px;
+  display:flex;flex-direction:column;gap:14px;
+}
+.summary h2{font-size:19px;}
+.card{
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:3px;
+  padding:22px 24px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.kv{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px 18px;align-items:baseline;}
+.kv .k{color:var(--ink-faint);}
+
+/* ---------- footer ---------- */
+footer{padding:30px 0 46px;border-top:1px solid var(--rule);}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--ink-faint);}
+footer a{color:var(--ink-faint);text-decoration:none;border-bottom:1px solid var(--rule);}
+footer a:hover{color:var(--ink);}
+
+@media (max-width:900px){
+  .doc .wrap{grid-template-columns:minmax(0,1fr);gap:28px;}
+  .toc{position:static;}
+  .kv{grid-template-columns:minmax(0,1fr);gap:4px;}
+  .kv .k{font-size:12px;}
+}
+</style>
+<title>Privacy Policy — Canadian Citizenship Test Prep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="https://sofluent.net/"><b>Sofluent</b><span class="mono">Technologies</span></a>
+    <nav class="nav">
+      <a href="https://sofluent.net/">Home</a>
+      <a href="/citizenship/support">Support</a>
+      <a href="mailto:info@sofluent.net">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="dochead">
+  <div class="wrap">
+    <div class="eyebrow mono"><span class="dot"></span><span>Canadian Citizenship Test Prep</span></div>
+    <h1>Privacy Policy</h1>
+    <p class="dates mono">Effective 1 September 2026 · Last updated 1 September 2026</p>
+    <p class="lede">This Privacy Policy explains how Sofluent Technologies Inc. (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) handles information in connection with the <strong>Canadian Citizenship Test Prep</strong> mobile application (the &ldquo;App&rdquo;) on iOS and Android. We built the App to be privacy-friendly: it works without an account, keeps your study data on your own device, and does not run our own servers.</p>
+  </div>
+</section>
+
+<section class="doc">
+  <div class="wrap">
+
+    <nav class="toc mono" aria-label="Contents">
+      <span class="k">Contents</span>
+      <a href="#collect">1 · Information we collect</a>
+      <a href="#use">2 · How we use information</a>
+      <a href="#ads">3 · Advertising &amp; choices</a>
+      <a href="#purchases">4 · In-app purchases</a>
+      <a href="#notifications">5 · Notifications</a>
+      <a href="#sharing">6 · How information is shared</a>
+      <a href="#retention">7 · Data retention</a>
+      <a href="#children">8 · Children&rsquo;s privacy</a>
+      <a href="#rights">9 · Your privacy rights</a>
+      <a href="#transfers">10 · International transfers</a>
+      <a href="#security">11 · Security</a>
+      <a href="#changes">12 · Changes</a>
+      <a href="#contact">13 · Contact us</a>
+    </nav>
+
+    <div class="body">
+
+      <div class="summary">
+        <h2>The short version</h2>
+        <ul>
+          <li>We <strong>do not require an account</strong> and do not ask for your name, email, or sign-in.</li>
+          <li>Your study data (progress, favorites, settings, purchase status) is stored <strong>only on your device</strong>.</li>
+          <li>The free version shows ads through <strong>Google AdMob</strong>, which collects device and advertising identifiers. A one-time purchase removes ads.</li>
+          <li>Purchases are handled by the <strong>Apple App Store or Google Play</strong> &mdash; we never see your payment details.</li>
+          <li>Reminders are <strong>local notifications</strong> scheduled on your device; nothing is sent to us.</li>
+          <li>The App is <strong>not directed to children</strong> under 13.</li>
+        </ul>
+      </div>
+
+      <section id="collect">
+        <h2><span class="num">01</span>Information we collect</h2>
+
+        <h3>Information you provide</h3>
+        <p>None required. The App has no sign-up, login, or profile. We do not ask for your name, email address, phone number, or any government identifiers.</p>
+
+        <h3>Information stored on your device</h3>
+        <p>As you use the App, it saves the following <strong>locally on your device only</strong> (using your device&rsquo;s standard app storage). This information is not transmitted to us and we cannot access it:</p>
+        <ul>
+          <li>Quiz results, lesson completion, and study progress;</li>
+          <li>Questions you save to Favorites;</li>
+          <li>App settings (language, theme, text size, reminder time);</li>
+          <li>Whether you have unlocked the premium (ad-free) version.</li>
+        </ul>
+
+        <h3>Information collected automatically for ads</h3>
+        <p>In the free version, our advertising partner <strong>Google AdMob</strong> may collect and process certain information on our behalf to serve and measure ads, including: advertising identifiers (such as the iOS IDFA or Android Advertising ID), IP address, coarse/approximate location derived from IP, device type and operating system, and ad interaction data. The specific data depends on your device settings and your consent choices (see <a href="#ads">Section&nbsp;3</a>). We do not use a separate analytics SDK.</p>
+      </section>
+
+      <section id="use">
+        <h2><span class="num">02</span>How we use information</h2>
+        <p>We use information to:</p>
+        <ul>
+          <li>Provide the App&rsquo;s features and remember your progress and preferences on your device;</li>
+          <li>Display and measure advertising in the free version (via Google AdMob);</li>
+          <li>Process and restore your one-time purchase (via the Apple App Store or Google Play);</li>
+          <li>Deliver the local reminder notifications you enable;</li>
+          <li>Maintain the security and proper functioning of the App and comply with legal obligations.</li>
+        </ul>
+      </section>
+
+      <section id="ads">
+        <h2><span class="num">03</span>Advertising &amp; your choices</h2>
+        <p>The free version of the App displays ads served by Google AdMob. Depending on your region and consent, ads may be <strong>personalized</strong> (based on an advertising identifier) or <strong>non-personalized</strong>.</p>
+        <ul>
+          <li><strong>EEA, UK, and Switzerland:</strong> before serving personalized ads, the App presents a consent request using Google&rsquo;s consent management platform. You may decline personalized ads or change your choice later from the App&rsquo;s <strong>Settings &rarr; Privacy Options</strong>.</li>
+          <li><strong>Reset or limit your advertising ID:</strong> on iOS, go to <strong>Settings &rarr; Privacy &amp; Security &rarr; Tracking</strong> (and <strong>Apple Advertising</strong>); on Android, go to <strong>Settings &rarr; Privacy &rarr; Ads</strong> to reset or delete your Advertising ID and opt out of ad personalization.</li>
+          <li><strong>Remove ads entirely:</strong> purchasing the premium unlock removes all ads from the App.</li>
+        </ul>
+        <p class="note">Google&rsquo;s handling of this data is governed by the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">How Google uses information from sites or apps that use our services</a>.</p>
+      </section>
+
+      <section id="purchases">
+        <h2><span class="num">04</span>In-app purchases</h2>
+        <p>The App offers a one-time purchase that unlocks premium content and removes ads. Purchases are processed entirely by the <strong>Apple App Store</strong> or <strong>Google Play</strong> under their own terms and privacy policies. We do not receive or store your payment card details. We receive only confirmation of whether a purchase or restore was successful, and we record the unlocked status locally on your device.</p>
+      </section>
+
+      <section id="notifications">
+        <h2><span class="num">05</span>Notifications</h2>
+        <p>If you enable the daily reminder, the App schedules a <strong>local notification</strong> on your device at the time you choose. These reminders are generated on-device; no push tokens or notification data are sent to us or any server. You can turn reminders off at any time in the App or in your device&rsquo;s notification settings.</p>
+      </section>
+
+      <section id="sharing">
+        <h2><span class="num">06</span>How information is shared</h2>
+        <p>We do not sell your personal information for money. Information is shared only as follows:</p>
+        <ul>
+          <li><strong>Advertising:</strong> with Google AdMob, to serve and measure ads in the free version, as described in <a href="#ads">Section&nbsp;3</a>. Note that, under some laws (e.g., California), sharing advertising identifiers for personalized advertising may be treated as a &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of personal information &mdash; see <a href="#rights">Section&nbsp;9</a>.</li>
+          <li><strong>App stores:</strong> with Apple and Google, to process purchases and deliver the App.</li>
+          <li><strong>Legal reasons:</strong> if required to comply with applicable law, legal process, or to protect rights, safety, and security.</li>
+        </ul>
+      </section>
+
+      <section id="retention">
+        <h2><span class="num">07</span>Data retention</h2>
+        <p>Because study data lives only on your device, it remains until you delete it or uninstall the App. Uninstalling removes the locally stored data. Data processed by Google for advertising is retained according to Google&rsquo;s policies. Purchase records are retained by Apple/Google per their policies.</p>
+      </section>
+
+      <section id="children">
+        <h2><span class="num">08</span>Children&rsquo;s privacy</h2>
+        <p>The App is intended for adults preparing for the Canadian citizenship test and is <strong>not directed to children under 13</strong> (or the equivalent minimum age in your jurisdiction). We do not knowingly collect personal information from children. If you believe a child has provided information through the App, contact us and we will address it.</p>
+      </section>
+
+      <section id="rights">
+        <h2><span class="num">09</span>Your privacy rights</h2>
+        <p>Because we do not maintain accounts or servers, most of your data is either stored on your device (which you control directly) or processed by Google for advertising. You can exercise on-device control by adjusting settings, resetting your advertising ID, or uninstalling the App. You may also contact us using the details in <a href="#contact">Section&nbsp;13</a>.</p>
+
+        <h3>Canada (PIPEDA)</h3>
+        <p>You have the right to access and correct your personal information and to withdraw consent. As we do not hold identifiable personal information about you on our systems, requests about advertising data may need to be directed to Google. You may also contact the Office of the Privacy Commissioner of Canada.</p>
+
+        <h3>European Economic Area &amp; United Kingdom (GDPR / UK GDPR)</h3>
+        <p>Where GDPR applies, our legal bases are your <strong>consent</strong> (for personalized advertising) and our <strong>legitimate interests</strong> (to operate the App and show non-personalized ads). You have the rights to access, rectify, erase, restrict, or object to processing, to data portability, and to withdraw consent at any time. You may lodge a complaint with your local data protection authority. Withdraw advertising consent via <strong>Settings &rarr; Privacy Options</strong>.</p>
+
+        <h3>California (CCPA/CPRA)</h3>
+        <p>We do not sell personal information for money. However, allowing personalized ads may constitute &ldquo;sharing&rdquo;/&ldquo;sale&rdquo; of identifiers under California law. You have the right to know, delete, and correct personal information, and to opt out of such &ldquo;sharing&rdquo;/&ldquo;sale&rdquo; &mdash; you can do so by declining ad personalization, limiting ad tracking on your device, or purchasing the ad-free version. We honor Global Privacy Control (GPC) signals where required.</p>
+      </section>
+
+      <section id="transfers">
+        <h2><span class="num">10</span>International data transfers</h2>
+        <p>Our service providers (such as Google and the app stores) may process information in countries other than yours, including the United States. Where required, these transfers rely on appropriate safeguards such as the Standard Contractual Clauses.</p>
+      </section>
+
+      <section id="security">
+        <h2><span class="num">11</span>Security</h2>
+        <p>We design the App to minimize the data it handles: no account, no developer-run servers, and study data kept on your device. No method of transmission or storage is completely secure, but keeping data on-device and relying on the platform vendors&rsquo; payment and ad infrastructure reduces risk.</p>
+      </section>
+
+      <section id="changes">
+        <h2><span class="num">12</span>Changes to this policy</h2>
+        <p>We may update this Privacy Policy from time to time. When we do, we will revise the &ldquo;Last updated&rdquo; date above and, for material changes, provide notice within the App or on this page. Your continued use of the App after an update means you accept the revised policy.</p>
+      </section>
+
+      <section id="contact">
+        <h2><span class="num">13</span>Contact us</h2>
+        <p>If you have questions or requests about this Privacy Policy or your information, contact:</p>
+        <div class="card">
+          <div class="kv">
+            <span class="k mono">Company</span><span>Sofluent Technologies Inc.</span>
+            <span class="k mono">Location</span><span>Ontario, Canada</span>
+            <span class="k mono">Email</span><a href="mailto:info@sofluent.net">info@sofluent.net</a>
+            <span class="k mono">Support</span><a href="/citizenship/support">sofluent.net/citizenship/support</a>
+          </div>
+        </div>
+        <p class="note">Canadian Citizenship Test Prep is an independent study aid. It is not affiliated with, endorsed by, or sponsored by the Government of Canada or Immigration, Refugees and Citizenship Canada.</p>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap mono">
+    <span>&copy; <span id="yr">2026</span> Sofluent Technologies Inc.</span>
+    <span><a href="https://sofluent.net/">sofluent.net</a> &middot; Incorporated in Canada</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

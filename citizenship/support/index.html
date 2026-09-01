@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Support and contact for the Canadian Citizenship Test Prep mobile app by Sofluent Technologies Inc.">
+<link rel="canonical" href="https://sofluent.net/citizenship/support">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sofluent.net/citizenship/support">
+<meta property="og:title" content="Support — Canadian Citizenship Test Prep">
+<meta property="og:description" content="Support and contact for the Canadian Citizenship Test Prep mobile app by Sofluent Technologies Inc.">
+<meta name="twitter:card" content="summary">
+<style>
+/* Shared styles for the standalone document pages (privacy, support).
+   Tokens and fonts mirror src/page.html so these read as part of the site. */
+:root{
+  --paper:#F2F3F0;
+  --surface:#FBFBF9;
+  --surface-2:#EAECE7;
+  --ink:#12191A;
+  --ink-soft:#4B5754;
+  --ink-faint:#75817D;
+  --rule:#D4D8D1;
+  --accent:#0F6B5C;
+  --accent-ink:#0B5346;
+  --accent-wash:#E3EDE9;
+  --signal:#B9762A;
+  --focus:#0F6B5C;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Source Serif 4",Georgia,"Times New Roman",serif;
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-weight:600;
+  text-wrap:balance;
+  margin:0;
+  letter-spacing:-0.015em;
+}
+p{margin:0;}
+a{color:var(--accent-ink);}
+a:hover{color:var(--accent);}
+.mono{
+  font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px;}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+
+/* ---------- masthead ---------- */
+.masthead{
+  position:sticky;top:0;z-index:20;
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule);
+}
+.masthead .wrap{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;min-height:66px;flex-wrap:wrap;
+}
+.wordmark{display:flex;align-items:baseline;gap:9px;text-decoration:none;color:var(--ink);}
+.wordmark b{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-weight:700;font-size:19px;letter-spacing:-0.02em;
+}
+.wordmark span{color:var(--ink-faint);}
+.nav{display:flex;align-items:center;gap:26px;flex-wrap:wrap;}
+.nav a{
+  color:var(--ink-soft);text-decoration:none;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
+  padding:4px 0;border-bottom:1px solid transparent;
+}
+.nav a:hover{color:var(--ink);border-bottom-color:var(--accent);}
+
+/* ---------- document head ---------- */
+.dochead{border-bottom:1px solid var(--rule);}
+.dochead .wrap{padding-top:64px;padding-bottom:40px;}
+.eyebrow{display:flex;gap:12px;align-items:center;color:var(--ink-faint);margin-bottom:22px;}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--signal);flex:none;}
+.dochead h1{font-size:clamp(32px,5vw,52px);line-height:1.05;font-weight:700;letter-spacing:-0.025em;max-width:20ch;}
+.dates{margin-top:20px;color:var(--ink-faint);}
+.lede{font-size:19px;line-height:1.6;color:var(--ink-soft);max-width:64ch;margin-top:22px;}
+
+/* ---------- document body ---------- */
+.doc .wrap{
+  display:grid;
+  grid-template-columns:190px minmax(0,1fr);
+  gap:48px;
+  padding-top:56px;padding-bottom:80px;
+  align-items:start;
+}
+.toc{
+  position:sticky;top:96px;align-self:start;
+  border-top:2px solid var(--accent);padding-top:12px;
+  display:flex;flex-direction:column;gap:9px;
+}
+.toc .k{color:var(--accent);}
+.toc a{color:var(--ink-soft);text-decoration:none;font-size:14px;line-height:1.35;}
+.toc a:hover{color:var(--accent-ink);}
+.body{display:flex;flex-direction:column;gap:38px;max-width:70ch;}
+section{scroll-margin-top:90px;display:flex;flex-direction:column;gap:14px;}
+section h2{font-size:23px;letter-spacing:-0.01em;display:flex;gap:12px;align-items:baseline;}
+section h2 .num{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:12px;letter-spacing:0.1em;color:var(--accent);flex:none;
+}
+section h3{font-size:17px;margin-top:6px;}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:9px;}
+li::marker{color:var(--ink-faint);}
+.note{color:var(--ink-soft);}
+
+/* ---------- callouts ---------- */
+.summary{
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-left:3px solid var(--accent);
+  border-radius:3px;
+  padding:24px 26px;
+  display:flex;flex-direction:column;gap:14px;
+}
+.summary h2{font-size:19px;}
+.card{
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:3px;
+  padding:22px 24px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.kv{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px 18px;align-items:baseline;}
+.kv .k{color:var(--ink-faint);}
+
+/* ---------- footer ---------- */
+footer{padding:30px 0 46px;border-top:1px solid var(--rule);}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--ink-faint);}
+footer a{color:var(--ink-faint);text-decoration:none;border-bottom:1px solid var(--rule);}
+footer a:hover{color:var(--ink);}
+
+@media (max-width:900px){
+  .doc .wrap{grid-template-columns:minmax(0,1fr);gap:28px;}
+  .toc{position:static;}
+  .kv{grid-template-columns:minmax(0,1fr);gap:4px;}
+  .kv .k{font-size:12px;}
+}
+</style>
+<title>Support — Canadian Citizenship Test Prep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="https://sofluent.net/"><b>Sofluent</b><span class="mono">Technologies</span></a>
+    <nav class="nav">
+      <a href="https://sofluent.net/">Home</a>
+      <a href="/citizenship/privacy">Privacy</a>
+      <a href="mailto:info@sofluent.net">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="dochead">
+  <div class="wrap">
+    <div class="eyebrow mono"><span class="dot"></span><span>Canadian Citizenship Test Prep</span></div>
+    <h1>Support</h1>
+    <p class="lede">Canadian Citizenship Test Prep is a study app for the Canadian citizenship test, built by Sofluent Technologies Inc. Its study material is drawn from the official IRCC study guide, <em>Discover Canada</em>. If something is not working, or a question looks wrong, write to us &mdash; a real person reads every message.</p>
+    <p class="dates mono">Email info@sofluent.net &middot; we reply within two business days</p>
+  </div>
+</section>
+
+<section class="doc">
+  <div class="wrap">
+
+    <nav class="toc mono" aria-label="Contents">
+      <span class="k">Contents</span>
+      <a href="#contact">Contact us</a>
+      <a href="#free-premium">What is free, what is paid</a>
+      <a href="#purchases">Purchases &amp; restoring</a>
+      <a href="#progress">Progress &amp; data</a>
+      <a href="#reminders">Daily reminders</a>
+      <a href="#ads">Ads &amp; privacy</a>
+      <a href="#content">Study content</a>
+    </nav>
+
+    <div class="body">
+
+      <section id="contact">
+        <h2><span class="num">01</span>Contact us</h2>
+        <p>Email is the fastest way to reach us. To help us fix things quickly, tell us your device and OS version (for example &ldquo;iPhone 14, iOS 18&rdquo;), what you were doing when the problem happened, and a screenshot if you have one.</p>
+        <div class="card">
+          <div class="kv">
+            <span class="k mono">Email</span><a href="mailto:info@sofluent.net?subject=Citizenship%20Test%20Prep%20support">info@sofluent.net</a>
+            <span class="k mono">Company</span><span>Sofluent Technologies Inc., Ontario, Canada</span>
+            <span class="k mono">Privacy</span><a href="/citizenship/privacy">sofluent.net/citizenship/privacy</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="free-premium">
+        <h2><span class="num">02</span>What is free, and what the purchase unlocks</h2>
+        <p>A large part of the app is free, with no account and no trial period:</p>
+        <ul>
+          <li><strong>Study</strong> &mdash; all 11 chapters and 39 lessons, entirely free.</li>
+          <li><strong>Quiz</strong> &mdash; the &ldquo;Quick Review&rdquo; and &ldquo;Getting Started&rdquo; sets are free; the other 15 curated sets are premium.</li>
+          <li><strong>Flashcards</strong> &mdash; the History and Geography categories are free; the remaining categories are premium.</li>
+        </ul>
+        <p>A single <strong>one-time purchase</strong> unlocks everything else: all 17 quiz sets, all flashcard categories, the daily reminder, and it removes ads. It is not a subscription &mdash; there is nothing to cancel, and it does not renew.</p>
+      </section>
+
+      <section id="purchases">
+        <h2><span class="num">03</span>Purchases and restoring</h2>
+
+        <h3>I bought the unlock but still see locked content or ads</h3>
+        <p>Use <strong>Restore Purchases</strong>. Open the unlock sheet &mdash; tap any locked quiz set, or the premium row in Settings &mdash; and choose <strong>Restore Purchases</strong>. Make sure you are signed in to the same Apple Account or Google account you bought with.</p>
+
+        <h3>I reinstalled the app or got a new phone</h3>
+        <p>The unlock is permanent and tied to your store account, so <strong>Restore Purchases</strong> brings it back at no extra cost. Your study progress, however, is stored only on the device and does not transfer &mdash; see below.</p>
+
+        <h3>Refunds</h3>
+        <p>Refunds are handled by the store you bought from, not by us. On iOS, use <a href="https://reportaproblem.apple.com/" rel="noopener">reportaproblem.apple.com</a>; on Android, use Google Play&rsquo;s order history. If a purchase failed but you were charged, email us and we will help you sort it out with the store.</p>
+      </section>
+
+      <section id="progress">
+        <h2><span class="num">04</span>Progress and your data</h2>
+        <p>The app has no account and no server. Your quiz results, lesson completion, favorites, and settings live only on your device. That is good for privacy, but it has one consequence worth knowing: <strong>uninstalling the app erases your progress and favorites, and they cannot be recovered.</strong> Purchases are the exception &mdash; those can always be restored.</p>
+      </section>
+
+      <section id="reminders">
+        <h2><span class="num">05</span>Daily reminders</h2>
+        <p>The daily reminder is a premium feature. Turn it on in <strong>Settings</strong> and pick a time; the app then schedules one notification a day on your device. Nothing is sent to a server.</p>
+        <p>If reminders do not arrive, check that notifications are allowed for the app in your device settings. On Android, aggressive battery optimization can also delay or suppress scheduled notifications &mdash; excluding the app from battery optimization usually fixes it.</p>
+      </section>
+
+      <section id="ads">
+        <h2><span class="num">06</span>Ads and privacy</h2>
+        <p>The free version shows banner ads through Google AdMob. Buying the one-time unlock removes them completely. In the EEA, UK, and Switzerland you are asked for ad-personalization consent, and you can change that choice at any time from <strong>Settings &rarr; Privacy Options</strong>.</p>
+        <p>Full details are in the <a href="/citizenship/privacy">Privacy Policy</a>.</p>
+      </section>
+
+      <section id="content">
+        <h2><span class="num">07</span>Study content</h2>
+        <p>Questions and lessons are based on <em>Discover Canada: The Rights and Responsibilities of Citizenship</em>, the official study guide published by Immigration, Refugees and Citizenship Canada. The app is available in English, French, Hindi, Punjabi, and Chinese; you can change the language, theme, and text size in <strong>Settings</strong>.</p>
+        <p>If you spot an answer you believe is wrong or out of date, please email us with the question text &mdash; corrections go into the next update.</p>
+        <p class="note">Canadian Citizenship Test Prep is an independent study aid. It is not affiliated with, endorsed by, or sponsored by the Government of Canada or Immigration, Refugees and Citizenship Canada, and it does not guarantee any test result.</p>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap mono">
+    <span>&copy; <span id="yr">2026</span> Sofluent Technologies Inc.</span>
+    <span><a href="https://sofluent.net/">sofluent.net</a> &middot; Incorporated in Canada</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
